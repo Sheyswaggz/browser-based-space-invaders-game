@@ -1,0 +1,93 @@
+{
+  "name": "space-invaders-game",
+  "version": "0.1.0",
+  "description": "Browser-based Space Invaders game built with HTML5 Canvas and vanilla JavaScript",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "http-server . -p 8080 -c-1 -o",
+    "build": "node scripts/build.js",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch",
+    "test:coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage",
+    "lint": "eslint . --ext .js,.cjs",
+    "lint:fix": "eslint . --ext .js,.cjs --fix",
+    "format": "prettier --write \"**/*.{js,cjs,json,html,css,md}\"",
+    "format:check": "prettier --check \"**/*.{js,cjs,json,html,css,md}\"",
+    "serve": "http-server dist -p 8080 -c-1",
+    "validate": "npm run lint && npm run format:check && npm run test",
+    "prepare": "node -e \"try { require('husky').install() } catch (e) {}\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/space-invaders-game.git"
+  },
+  "keywords": [
+    "game",
+    "space-invaders",
+    "html5-canvas",
+    "javascript",
+    "browser-game",
+    "arcade"
+  ],
+  "author": "Your Name <your.email@example.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yourusername/space-invaders-game/issues"
+  },
+  "homepage": "https://github.com/yourusername/space-invaders-game#readme",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^9.3.4",
+    "@testing-library/jest-dom": "^6.1.5",
+    "eslint": "^8.56.0",
+    "eslint-plugin-security": "^2.1.0",
+    "http-server": "^14.1.1",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "prettier": "^3.1.1"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "coverageDirectory": "coverage",
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/**/*.test.js",
+      "!src/**/*.spec.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    },
+    "testMatch": [
+      "**/__tests__/**/*.js",
+      "**/?(*.)+(spec|test).js"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json"
+    ],
+    "transform": {},
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/dist/"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/dist/"
+    ]
+  },
+  "browserslist": [
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 2 Safari versions",
+    "last 2 Edge versions"
+  ]
+}
