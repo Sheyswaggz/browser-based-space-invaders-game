@@ -12,8 +12,8 @@ module.exports = {
   },
   plugins: ['security'],
   rules: {
-    'no-unused-vars': 'warn',
-    'no-console': 'off',
+    'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+    'no-console': ['warn', { allow: ['warn', 'error'] }],
     'security/detect-object-injection': 'warn',
     'security/detect-non-literal-regexp': 'warn',
     'security/detect-unsafe-regex': 'error',
